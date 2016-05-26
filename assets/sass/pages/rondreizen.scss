@@ -1,0 +1,26 @@
+.header-rondreizen {
+    background-image: url(../img/rondreizen/river-header.jpg);
+    background-position: center bottom;
+
+    .text-overlay {
+    	position:absolute;
+		top:50%;
+		left:50%; 
+		text-align:center;
+		transform: translateX(-50%) translateY(-50%);
+
+		h1 {
+			line-height: 1em;
+			font-family: Arkhip;
+			letter-spacing: -3px;
+			font-size: 48px;
+		}
+		p {
+		    text-transform: uppercase;
+		    font-weight: bold;
+		    letter-spacing: 0.25em;
+		    line-height: 1em;
+		    font-weight: 300;
+		}
+    }
+}

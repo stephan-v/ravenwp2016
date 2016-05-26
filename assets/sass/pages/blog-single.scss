@@ -1,0 +1,34 @@
+.single-blog-header {
+    background: url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/cartographer.png);
+    height: 80px;
+}
+.blog-single {
+	margin-top: 30px;
+
+	img {
+		margin-bottom: 3em;
+	}
+	h1 {
+		margin: 1em 0;
+	}
+	.main-text {
+		margin-bottom: 50px;
+	    font-family: Lato;
+	    font-weight: 200;
+	    line-height: 1.8;
+
+		p {
+			font-size: 18px;
+		}
+		a {
+			font-size: 1em;
+		}
+		ul {
+		    font-size: 1.4em;
+
+    		li {
+    			margin-bottom: 0.3em;
+    		}
+		}
+	}
+}

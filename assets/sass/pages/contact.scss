@@ -1,0 +1,125 @@
+$form-spacing: 50px;
+
+.contact-header {
+	background-image: url('assets/img/header-contact.jpg');
+	background-position: center;
+	height: 50vh;
+
+	&:after {
+		opacity: 0.5;
+	}
+	.container .absolute-center {
+		top: 50%;
+	}
+}
+.contact-page {
+	padding: 50px 0 100px 0;
+
+	.contact-information {
+		padding: 50px;
+		background: white;
+
+		.fa {
+			float: left;
+			margin-top: 8px;
+		}
+		.address {
+			display: inline-block;
+		}
+		p {
+			margin-bottom: 1.5em;
+		}
+		ul {
+			padding: 0;
+			margin: 0;
+			list-style: none;
+			font-size: 1.6em;
+
+			a {
+				font-size: 1em;
+			}
+			li {
+				padding-bottom: 1em;
+				
+				&:last-child {
+					padding: 0;
+				}
+				.fa {
+					margin-right: 10px;
+				}
+			}
+		}
+		.heading-img {
+			max-height: 100px;
+			margin: 0 auto 30px auto;
+			display: block;
+		}
+	}
+	.main-form {
+		background: white;
+		padding: 50px;
+	}
+	h3 {
+		margin-top: 0;
+		margin-bottom: 0.5em;
+	}
+	.intro {
+		margin-bottom: 2em;
+	}
+	.focus {
+		color: black;
+	}
+	input, textarea {
+		border: 0;
+		background: #eee;
+		border-radius: 3px;
+		width: 100%;
+		padding: 5px 15px;
+		outline: none;
+
+		& + label {
+			position: absolute;
+			top: 10px;
+			transition: top 0.7s ease, opacity 0.7s ease;
+			opacity: 0;
+			font-weight: 600;
+			color: #ccc;
+	    }
+	}
+	textarea {
+		max-height: 250px;
+	}
+	.wpcf7-submit {
+        background: linear-gradient(#A0D670, #90CC59);
+    	border: 1px solid #9FC180;
+	    width: 100%;
+	    font-weight: bold;
+	    text-transform: uppercase;
+	    font-size: 13px;
+	    color: #6B9248;
+	    float: right;
+
+	    &:hover {
+	    	background: linear-gradient(lighten(#A0D670, 5%), lighten(#90CC59, 5%));
+	    	color: lighten(#6B9248, 5%);
+	    }
+	}
+	.wpcf7-validation-errors {
+	    font-size: 1.6em;
+	}
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 992px) {
+	.contact-page {
+		h2 {
+			font-size: 3em;
+		}
+		.contact-information {
+			padding: 50px;
+		}
+		.wpcf7-submit {
+			width: auto;
+		}
+	}
+}

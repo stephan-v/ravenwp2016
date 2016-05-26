@@ -1,0 +1,241 @@
+/* ==========================================================================
+Comparison slider
+========================================================================== */
+
+.slider-wrapper {
+    max-width: 500px;
+    height: 220px;
+    margin: 0 auto;
+    position: relative;
+}
+.slider-wrapper:hover { 
+  cursor: none; 
+}
+.comparison-slider {
+    position: absolute;
+    width: 4px;
+    left: 50%;
+    top: -10px;
+    bottom: -15px;
+    box-shadow: 0 0 10px 1px rgba(0,0,0,0.3);
+}
+.before-wrapper {
+    border-radius: 8px;
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: url("../img/before.png") no-repeat;
+}
+.after-wrapper, .after-image {
+    border-radius: 0 8px 8px 0;
+}
+.after-wrapper {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: translateX(50%);
+}
+.after-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform: translateX(-50%);
+    background: url("../img/after.png") no-repeat;
+}
+
+/* ==========================================================================
+Jumbotron
+========================================================================== */
+
+.services-header {
+    background: url(assets/img/workspace.jpg) center center;
+    background-size: cover;
+    max-height: 600px;
+
+    &:after {
+        opacity: 0.4;
+    }
+    .content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+
+        h2 {
+            margin-top: 70px;
+        }
+        img {
+            margin-bottom: -300px;
+        }
+    }
+}
+
+
+/* ==========================================================================
+Services
+========================================================================== */
+
+.services {
+    margin: 50px auto 100px auto;
+
+    .col-md-6 {
+        transition: all 0.5s ease-in-out;
+
+        &:hover {
+            background: whitesmoke;
+        }
+        a {
+            color: inherit;
+            text-decoration: none;
+            font-size: 1em;
+            width: 100%;
+            height: 100%;
+            display: block;
+            padding: 30px;
+        }
+        h2 {
+            margin-top: 0;
+        }
+        img {
+            max-height: 150px;
+        }
+    }
+    .icon {
+        background-size: cover;
+        margin: 0 auto;
+        height: 150px;
+        width: 150px;
+    }
+    .responsive {
+        
+        .icon {
+            background-image: url(assets/img/services/animat-responsive-static.gif);
+        }
+        &:hover .icon {
+            background-image: url(assets/img/services/animat-responsive.gif);
+        }
+    }
+    .diamond {
+        
+        .icon {
+            background-image: url(assets/img/services/animat-diamond-static.gif);
+        }
+        &:hover .icon {
+            background-image: url(assets/img/services/animat-diamond.gif);
+        }
+    }
+    .search {
+        
+        .icon {
+            background-image: url(assets/img/services/animat-search-static.gif);
+        }
+        &:hover .icon {
+            background-image: url(assets/img/services/animat-search.gif);
+        }
+    }
+    .customize {
+        
+        .icon {
+            background-image: url(assets/img/services/animat-customize-static.gif);
+        }
+        &:hover .icon {
+            background-image: url(assets/img/services/animat-customize.gif);
+        }
+    }
+}
+
+/* ==========================================================================
+What we love
+========================================================================== */
+
+.what-we-love {
+    .col-sm-6 {
+        padding: 80px;
+
+        img {
+            margin-bottom: 30px;
+        }
+    }
+    div[class^="col-"], div[class*=" col-"] {
+        position: relative;
+    }
+}
+.animated-row {
+    .col-md-2 {
+        padding: 0;
+        border-bottom: 1px solid lightgrey;
+
+        // sass loop
+        @for $i from 1 through 6 {
+            &:nth-child(#{$i}) a {
+                animation-delay: 0ms + ($i * 100);
+            }
+        }
+        a {
+            display: block;
+            width: 100%;
+            padding: 40px;
+            height: 100%;
+            opacity: 0;
+
+            img {
+                transition: all 0.15s ease-in-out;
+                max-height: 50px;
+            }
+            &:hover img {
+                transform: scale(1.2);
+            }
+        }
+    }
+}
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .what-we-love .col-md-2 a img {
+        max-height: inherit;
+    }
+}
+
+/* ==========================================================================
+Contact us
+========================================================================== */
+
+.contact-us {
+    background: url(assets/img/desk-contact.jpeg) center center;
+    background-size: cover;
+    padding: 125px 0;
+    position: relative;
+
+    &:after {
+        background: black;
+        opacity: 0.7;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        content: ' ';
+        z-index: 1;
+    }
+    .container {
+        position: relative;
+        z-index: 2;
+        color: white;
+
+        h1 {
+            margin-top: 0;
+        }
+        p {
+            margin-bottom: 2em;
+        }
+        .btn {
+            color: white;
+        }
+    }
+}

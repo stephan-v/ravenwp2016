@@ -1,0 +1,54 @@
+.blog-header {
+	background: url(assets/img/header-blog.jpg) center 75%;
+	background-size: cover;
+	max-height: 600px;
+
+	.container .absolute-center {
+		top: 55%;
+	}
+	&:after {
+		opacity: 0;
+	}
+}
+.blog-page {
+	margin: 50px auto;
+
+	.post-item {
+		padding: 15px 0;
+
+		a {
+			font-size: 1em;
+			color: black;
+		}
+		.post-content {
+			position: relative;
+			background: white;
+			padding: 30px;
+
+			h4 {
+				font-weight: bold;
+				margin-top: 0;
+			}
+			p {
+				line-height: 1.8em;
+				margin-bottom: 1em;
+			}
+			.post-readmore {
+			    background: #FDD752;
+			    color: #FFFFFF;
+			    padding: 5px 10px;
+			    position: absolute;
+			    right: -5px;
+			    bottom: -5px;
+			    text-transform: uppercase;
+			    font-weight: bold;
+			    font-size: 1.3em;
+
+			    &:hover {
+			    	text-decoration: none;
+			    	background: darken(#FDD752, 15%);
+			    }
+			}
+		}
+	}
+}

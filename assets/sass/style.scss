@@ -1,0 +1,371 @@
+/*
+Theme Name:         Sage Starter Theme
+Theme URI:          https://roots.io/sage/
+Description:        Sage is a WordPress starter theme. <a href="https://github.com/roots/sage">Contribute on GitHub</a>
+Version:            8.4.2
+Author:             Roots
+Author URI:         https://roots.io/
+Text Domain:        sage
+License:            MIT License
+License URI:        http://opensource.org/licenses/MIT
+*/
+
+
+/* ==========================================================================
+Colors
+========================================================================== */
+
+/* Red colorscheme */
+// $primary-color: #ff303f;
+
+
+/* Yellow colorscheme */
+$primary-color: #FDD752;
+
+$font-color: #3F3F3F;
+
+/* ==========================================================================
+Imports
+========================================================================== */
+
+// pages
+@import 'pages/index';
+@import 'pages/services';
+@import 'pages/contact';
+@import 'pages/rondreizen';
+@import 'pages/portfolio';
+@import 'pages/blog-single';
+@import 'pages/blog';
+
+// vendors
+@import 'vendor/animate';
+
+//components
+@import 'components/buttons';
+
+/* ==========================================================================
+General styles
+========================================================================== */
+
+// fix for animation temporarily showing a horizontal scrollbar
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+body {
+	font-size: 16px;
+	line-height: 3em;
+	font-family: 'Open Sans', sans-serif;
+    color: $font-color;
+    font-size: 10px;
+    background: white;
+}
+img {
+	max-width: 100%;
+    height: auto;
+}
+h1, h2, h3, h4, h5, h6 {
+	line-height: 1.6em;
+	font-family: 'Merriweather', serif;
+	margin-bottom: 1em;
+}
+.highlight {
+    color: $primary-color;
+    display: inline;
+}
+hr {
+    width: 45px;
+    border-color: $primary-color;
+    border-width: 2px;
+}
+.border-right {
+    border-right: 1px solid lightgrey;
+}
+.border-left {
+    border-left: 1px solid lightgrey;
+}
+.border-bottom {
+    border-bottom: 1px solid lightgrey;
+}
+.absolute-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+.noscroll {
+    height: 100%;
+    overflow: hidden;
+}
+.no-opacity {
+    opacity: 0;
+}
+
+/* ==========================================================================
+Crayon highlighter
+========================================================================== */
+
+.crayon-syntax .crayon-main {
+    padding: 15px;
+
+    .crayon-table {
+        margin-left: 0;
+
+        .crayon-nums {
+            display: none;
+        }
+    }
+}
+
+/* ==========================================================================
+Typography
+========================================================================== */
+
+h1 {
+    font-size: 3.6em;
+}
+a, p {
+    font-size: 1.6em;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+@font-face {
+    font-family: 'arkhip';
+    src: url('../fonts/arkhip_font-webfont.eot');
+    src: url('../fonts/arkhip_font-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/arkhip_font-webfont.woff2') format('woff2'),
+         url('../fonts/arkhip_font-webfont.woff') format('woff'),
+         url('../fonts/arkhip_font-webfont.ttf') format('truetype'),
+         url('../fonts/arkhip_font-webfont.svg#arkhipregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* ==========================================================================
+Main navigaton
+========================================================================== */
+
+#menu-icon-wrapper {
+    width: 34px;
+    height: 34px;
+    pointer-events: auto;
+    float: right;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    margin: 30px;
+
+    svg {
+        position: absolute;
+        top: -33px;
+        left: -33px;
+        transform: scale(0.1);
+        transform-origin: 0 0;
+    }
+    path {
+        stroke: #fff;
+        stroke-width: 50px;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        fill: transparent;
+    }
+}
+.navbar.navbar-default {
+    border-radius: 0;
+    border: none;
+    border-left: none;
+    width: 100%;
+    z-index: 3;
+    margin: 0;
+    position: absolute;
+    background: none;
+
+    .navbar-collapse {
+        border: none;
+    }
+    .container {
+        position: relative;
+
+        .logo {
+            transition: all 200ms ease-in-out;
+            position: absolute;
+            z-index: 10;
+            top: -10px;
+            left: 30px;
+
+            &:hover {
+                top: 0;
+            }
+        }
+        .navbar-right {
+            margin: 0 -15px;
+            text-align: center;
+
+            li {
+                text-transform: uppercase;
+                font-weight: 600;
+                font-size: 0.8em;
+                overflow: hidden;
+
+                &:last-child {
+                    border: none;
+                }
+                a {
+                    color: white;
+                    padding: 20px 0;
+                    margin: 0;
+                    font-size: 1.6em;
+
+                    &:hover {
+                        text-decoration: none;
+
+                        span:before {
+                            color: #fdd752;
+                        }
+                    }
+                    span {
+                        overflow: hidden;
+                    }
+                }
+            }
+        }
+        .navbar-toggle {
+            margin: 18px 15px;
+        }
+    }
+}
+.fullscreen-menu {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background: $primary-color;
+    top: 0;
+    z-index: -1;
+
+    .navbar-right {
+        top: 50%;
+        position: absolute;
+        width: 100%;
+        transform: translateY(-50%);
+
+        a {
+            color: #3F3F3F !important;
+
+            &:hover span {
+                transform: none;
+            }
+        }
+    }
+}
+.darknav a {
+    color: rgba(0,0,0,0.7) !important;
+}
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    #menu-icon-wrapper { 
+        display: none;
+    }
+    .navbar.navbar-default .container {
+        .logo {
+            left: 15px;
+        }
+        .navbar-right {
+            padding: 30px 0;
+
+            li {
+                margin: 10px 0 10px 30px;
+
+                &:first-child {
+                    margin-left: 0;
+                }
+                a {
+                    padding: 0;
+
+                    span {
+                        overflow: inherit;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+Footer
+========================================================================== */
+
+$footer-padding: 50px;
+
+footer {
+    background: #1C1C1C;
+    color: #4E4E4E;
+    background-size: cover;
+    padding: 100px 0 75px 0;
+    position: relative;
+    text-align: center;
+
+    .row {
+        margin-left: -$footer-padding;
+        margin-right: -$footer-padding;
+
+        div[class^="col-"], div[class*=" col-"] {
+            padding: 0 $footer-padding;
+        }
+    }
+    h3 {
+        font-size: 2em;
+        color: white;
+        display: inline-block;
+        border-bottom: 1px solid $primary-color;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+    }
+    p, a {
+        font-size: 1.4em;
+        line-height: 2em;
+        color: white;
+    }
+    .logo {
+        max-height: 75px;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .logo-horizontal {
+        margin-top: 1em;
+        margin-bottom: 2em;
+        display: none;
+    }
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+}
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    footer {
+        text-align: left;
+
+        .logo-horizontal {
+            display: block;
+        }
+    }
+}
+
+
+/* ==========================================================================
+On scroll animation
+========================================================================== */
+
+.os-animation-left, .os-animation-right {
+  opacity: 0;
+}
+.os-animation.animated{
+    opacity: 1;
+
+}
